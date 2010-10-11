@@ -1,0 +1,12 @@
+Applicative order evaluates the operator and operands, then applies the resulting procedure
+to the resulting arguments. In such a scheme, the evaluation of (p) as the second arg to some-test
+causes an infinite loop/stack overflow (since p is self-invoking).
+
+Normal order substitutes operand expressions for parameters until an expression involving only
+primitive operators is produced, then the evaluation would be performed.
+
+(test 0 (p))
+--> (if (= 0 0) 0 (p))
+--> 0
+
+p never needs evaluated.
