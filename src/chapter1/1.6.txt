@@ -1,0 +1,3 @@
+If 'if' were a regular procedure and not a special form, then all of its operands would get evaluated
+before the procedure is invoked. This means that in the case of sqrt-iter, sqrt-iter would end up
+getting called recursively without end before the original invocation is taken care of.
