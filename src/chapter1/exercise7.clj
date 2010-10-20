@@ -12,6 +12,6 @@
 (defn sqrt-iter [guess last-guess x]
   (if (good-enough? guess last-guess x)
       guess
-      (sqrt-iter (improve guess x) guess x)))
+      (recur (improve guess x) guess x)))
 
 (defn sqrt [x] (sqrt-iter 1.0 0 x))

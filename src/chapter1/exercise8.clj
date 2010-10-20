@@ -9,6 +9,6 @@
 (defn cbrt-iter [guess last-guess x]
   (if (good-enough? guess last-guess x)
       guess
-      (cbrt-iter (improve guess x) guess x)))
+      (recur (improve guess x) guess x)))
 
 (defn cbrt [x] (cbrt-iter 1.0 0 x))
